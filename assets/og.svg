@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="s" x1="0" x2="1"><stop offset="0" stop-color="#ec6a3c"/><stop offset=".36" stop-color="#f9609f"/><stop offset=".66" stop-color="#f3726b"/><stop offset="1" stop-color="#e8823a"/></linearGradient>
+    <linearGradient id="o" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3fe0"/><stop offset=".46" stop-color="#2266ec"/><stop offset="1" stop-color="#1a86f0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f2f2f2"/>
+  <rect width="700" height="230" fill="url(#s)"/>
+  <rect x="700" width="500" height="630" fill="url(#o)"/>
+  <circle cx="900" cy="260" r="150" fill="#e0143c" opacity=".85"/><circle cx="1040" cy="380" r="130" fill="#ff6a28" opacity=".8"/><circle cx="960" cy="200" r="34" fill="#00ff00"/>
+  <rect y="230" width="700" height="400" fill="#141414"/>
+  <text x="36" y="214" font-family="Helvetica, Arial, sans-serif" font-size="150" font-weight="500" letter-spacing="-9" fill="#fff">TursiopsX</text>
+  <text x="36" y="320" font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="500" letter-spacing="-2" fill="#f2f2f2">Deploy governed AI agent</text>
+  <text x="36" y="380" font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="500" letter-spacing="-2" fill="#f2f2f2">teams for workforce</text>
+  <text x="36" y="440" font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="500" letter-spacing="-2" fill="#00ff00">operations.</text>
+  <rect x="36" y="520" width="300" height="56" fill="#00ff00"/>
+  <text x="58" y="556" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#141414">Join the private waitlist</text>
+</svg>

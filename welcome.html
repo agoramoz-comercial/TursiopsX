@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-MZ" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Welcome — TursiopsX private waitlist</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#141414">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <script src="assets/js/config.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+<header class="topbar" style="display:flex">
+  <a class="brand" href="index.html" aria-label="TursiopsX — início">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="5" fill="#141414"/><path d="M9 9l14 14M23 9 9 23" stroke="#00ff00" stroke-width="3.2" stroke-linecap="square"/></svg>
+    TursiopsX
+  </a>
+  <a class="btn btn--ghost" href="index.html">← Voltar ao site</a>
+</header>
+
+<main id="main">
+  <section class="sub-hero" aria-labelledby="w-title">
+    <div class="sub-hero__ink">
+      <p class="eyebrow">Application received</p>
+      <h1 class="h-xxl" id="w-title" lang="en" style="margin-top:22px">Welcome to the TursiopsX waitlist<span id="w-name"></span>.</h1>
+      <p class="lede" style="margin-top:22px;max-width:46ch;color:#d9d9d9" lang="en">You are now part of the community shaping governed workforce agents.</p>
+      <p class="small" style="margin-top:22px;max-width:60ch;color:#a9a9a9" lang="en">Application received. Our team will review the operational fit, risk level and pilot readiness before proposing a next step.</p>
+    </div>
+    <div class="sub-hero__field" aria-hidden="true"></div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="sec-head__meta" style="margin-bottom:28px"><span class="eyebrow">Próximas ações</span><span class="idx">01–05</span></div>
+      <ol class="next">
+        <li>Confirme o seu email <span class="chip">Verifique a caixa de entrada</span></li>
+        <li>Complete o Workforce Mission Assessment <a class="btn" href="index.html#builder">Abrir</a></li>
+        <li>Selecione o tipo de participação <a class="btn btn--ghost" href="index.html#join">Rever</a></li>
+        <li>Indique disponibilidade para entrevista <a class="btn btn--ghost" href="#" data-contact="interview">Responder</a></li>
+        <li>Receba atualizações do roadmap <a class="btn btn--ghost" href="index.html#roadmap">Ver roadmap</a></li>
+      </ol>
+      <p class="small mute" style="margin-top:20px;max-width:70ch">Não existe ranking público nem posição na fila. Cada candidatura é revista individualmente e a inscrição não garante aceitação no piloto.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight section--white">
+    <div class="wrap grid" style="row-gap:24px;align-items:end">
+      <div style="grid-column:1/-1">
+        <p class="eyebrow">Partilhe com intenção</p>
+        <h2 class="h-xl balance" lang="en" style="margin-top:18px;max-width:20ch">Know an organisation with a workforce workflow ready for transformation?</h2>
+      </div>
+      <div style="grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn--signal btn--lg" href="#" id="refer" data-contact="refer">Refer an Organisation <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="btn btn--ghost btn--lg" href="index.html">Voltar ao site</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" style="padding-top:0">
+  <div class="wrap">
+    <div class="footer__legal">
+      <p>© 2026 TursiopsX. All rights reserved.</p>
+      <p lang="en">TursiopsX is an independent technology venture. It is not affiliated with, endorsed by, or acting on behalf of the Government of Mozambique or any public authority.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const cfg = window.TX_CONFIG || {};
+  let who = {};
+  try { who = JSON.parse(sessionStorage.getItem("tx_applicant") || "{}"); } catch (e) {}
+  if (who.first) document.getElementById("w-name").textContent = ", " + who.first;
+  const mail = cfg.contactEmail || "";
+  document.querySelectorAll("[data-contact]").forEach(a => {
+    const kind = a.dataset.contact;
+    const subject = kind === "refer" ? "Referência de organização para a TursiopsX" : "Disponibilidade para entrevista — TursiopsX";
+    a.href = "mailto:" + mail + "?subject=" + encodeURIComponent(subject);
+  });
+  const refer = document.getElementById("refer");
+  if (navigator.share) refer.addEventListener("click", e => {
+    e.preventDefault();
+    navigator.share({ title: "TursiopsX", text: "A TursiopsX procura design partners para missões de workforce governadas por agentes.", url: location.origin + location.pathname.replace(/welcome\.html$/, "") + "?ref=referral" }).catch(() => {});
+  });
+  (window.dataLayer = window.dataLayer || []).push({ event: "welcome_view", segment: new URLSearchParams(location.search).get("s") || who.segment || null, ts: new Date().toISOString() });
+})();
+</script>
+</body>
+</html>
